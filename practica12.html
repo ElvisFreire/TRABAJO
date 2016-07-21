@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="angular/angular.min.js"></script>
+	<script type="text/javascript" src="js/practica12.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap/css/bootstrap.css">
+	<script type="text/javascript" src="angular/angular-resource.js"></script>
+</head>
+<body style="background:#c8c9c9">
+	
+	<div ng-app="app" ng-controller="control12">
+	<h3>Cedula</h3><input type="text" ng-model="cedula" >
+	<input type="submit" ng-click="BuscarAlumno()"  value="verificar">
+		<div style="width: 50%" > 
+			<table class="table table-striped"  ng-show="boton" style="background:rgb(255, 179, 94); margin-left: 50%">
+					<tr>
+						<td>ID</a></td>
+						<td>NOMBRE</td>
+						<td>CAPACIDAD</td>
+						<td>MATRICULAS LIBRES</td>
+					</tr>
+					<tr ng-repeat="x in datos">
+						<td>{{x.id}}</td>
+						<td >{{x.nombre}}</td>
+						<td >{{x.capacidad}}</td>
+						<td>{{x.cupos_disponibles}}</td>
+						</tr>
+			</table>
+	<div class="alert alert-danger"><h3 align="center">{{msm}}</h3></div>
+		</div>
+	</body>
+	</html>
